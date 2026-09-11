@@ -1,0 +1,17 @@
+name = "xtzyyy-premium-api"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[observability]
+enabled = true
+
+# Cloudflare Custom Domain: Worker serves the website + API directly.
+# Requires xtzyyy.my.id to be an ACTIVE Cloudflare zone.
+[[routes]]
+pattern = "xtzyyy.my.id"
+custom_domain = true
